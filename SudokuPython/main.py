@@ -1,5 +1,5 @@
 Tamaño = 9
-
+Tablero = [[0 for col in range(1,10)] for row in range(1,10)]
 
 def imprimirTablero(tablero):
     for fila in range(Tamaño):
@@ -21,6 +21,7 @@ def esValido(tablero, fila, columna, num):
         if tablero[x][columna] == num:
             return False
 
+# Verifica el 3x3
     tempFila = fila - fila % 3
     tempColumna = columna - columna % 3
     for i in range(3):
@@ -36,9 +37,9 @@ def pedirNumero(tablero):
     fila = 10
     while(num<0 or num>9):
         num = int(input("Digite un numero: "))
-    while (columna < 0 or columna > 9):
+    while (columna < 0 or columna > 8):
         columna = int(input("Digite una posicion en x [0 - 8]: "))
-    while (fila < 0 or fila > 9):
+    while (fila < 0 or fila > 8):
         fila = int(input("Digite una posicion en y [0 - 8]: "))
 
     if(esValido(tablero, fila, columna, num)):
@@ -69,11 +70,12 @@ def menu(tablero):
 
     elif a == 3:
         print("Reglas: No hay :v")
+        menu(tablero)
 
     elif a == 4:
 
         print("Gracias por jugar!")
-
+        exit()
     else:
         print("Error")
 
@@ -114,7 +116,7 @@ def llenarTablero(tablero):
         menu(tablero)
 
 # Se llena el tablero de 0
-Tablero = [[0 for col in range(1,10)] for row in range(1,10)]
+
 
 # Se imprime el Tablero
 imprimirTablero(Tablero)

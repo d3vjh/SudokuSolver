@@ -158,7 +158,7 @@ public class Main {
 			if (resolver(tablero)) {
 				System.out.println("\tResuleto!!");
 			} else {
-				System.out.println("\tNo se puede resolver:(");
+				System.out.println("\tNo se puede resolver :(");
 				pedirNumero(tablero);
 			}
 			
